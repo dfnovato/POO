@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Temas com CSS</title>
+    <style>
+        :root {
+            --background-color: #f4f4f9;
+            --card-background: white;
+            --text-color: #333;
+            --text-secondary-color: #666;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #121212;
+            --card-background: #1e1e1e;
+            --text-color: #f4f4f9;
+            --text-secondary-color: #bbbbbb;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            background: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .card .info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card .info h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+
+        .card .info p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-secondary-color);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--card-background);
+            color: var(--text-color);
+            border: 1px solid var(--text-secondary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <div class="container">
+        <div class="card">
+            <img src="https://placehold.co/200x180" alt="Imagem 1">
+            <div class="info">
+                <h3>Título 1</h3>
+                <p>Conteúdo detalhado sobre o item 1.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/200x180" alt="Imagem 2">
+            <div class="info">
+                <h3>Título 2</h3>
+                <p>Conteúdo detalhado sobre o item 2.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/200x180" alt="Imagem 3">
+            <div class="info">
+                <h3>Título 3</h3>
+                <p>Conteúdo detalhado sobre o item 3.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+        }
+    </script>
+</body>
