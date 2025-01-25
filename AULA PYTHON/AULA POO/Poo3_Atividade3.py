@@ -12,7 +12,7 @@ class Alunos:
     @nome.setter
     def nome(self, newnome):
         self.__nome = newnome
-        return f"Nome {self.__nome}"
+        print(f"Nome {self.__nome}")
     
     @property
     def idade(self):
@@ -21,7 +21,7 @@ class Alunos:
     @idade.setter
     def idade(self, newidade):
         self.__idade = newidade
-        return f"Idade {self.__idade}"
+        print(f"Idade {self.__idade}")
     
     @property
     def matricula(self):
@@ -30,14 +30,17 @@ class Alunos:
     @matricula.setter
     def matricula(self, newmatricula):
         self.__matricula = newmatricula
-        return f"Matricula {self.__matricula}"
-    
-    def __str__(self):
-        return f"Nome {self.__nome} Idade {self.__idade} Matricula {self.__matricula}"
-    
+        print(f"Matricula {self.__matricula}")
+
 Marcos = Alunos("Marcos", 27, 25)
 Tyago = Alunos("Tyago", 26, 26)
 
 print(Marcos.nome)
+print(Marcos.idade)
+print(Marcos.matricula)
 Marcos.nome = "Marcos Lisboa"
+Marcos.idade = 28
+Marcos.matricula = 27
 print(Marcos.nome)
+print(Marcos.idade)
+print(Marcos.matricula)
